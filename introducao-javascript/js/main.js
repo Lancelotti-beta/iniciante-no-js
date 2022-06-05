@@ -50,7 +50,16 @@ botaoForm.addEventListener('click', (e) => {
 })
 
 function adicionaNaTabela(){
-    tabela.innerHTML += `<td>${novoNome.value}</td> <td>${novoPeso.value}</td> <td>${novoAltura.value}</td> <td>${novoGordura.value}</td>`;
+    imc = parseFloat(novoPeso.value) / (parseFloat(novoAltura.value) * parseFloat(novoAltura.value));
+    tabela.innerHTML += `
+        <tr>
+            <td>${novoNome.value}</td> 
+            <td>${novoPeso.value}</td>
+            <td>${novoAltura.value}</td> 
+            <td>${novoGordura.value}</td> 
+            <td>${imc.toFixed(2)}</td>
+        </tr>
+    `;
 
     novoNome.value = " ";
     novoPeso.value = " ";
