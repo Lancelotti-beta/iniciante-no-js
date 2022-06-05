@@ -39,10 +39,10 @@ for (let index = 0; index < tabelaPaciente.length; index++) {
 const botaoForm = document.getElementById('adicionar-paciente');
 const tabela = document.getElementById('tabela-pacientes')
 
-const nome = document.querySelector('#nome');
-const peso = document.querySelector('#peso');
-const altura = document.querySelector('#altura');
-const gordura = document.querySelector('#gordura');
+const novoNome = document.querySelector('#nome');
+const novoPeso = document.querySelector('#peso');
+const novoAltura = document.querySelector('#altura');
+const novoGordura = document.querySelector('#gordura');
 
 botaoForm.addEventListener('click', (e) => {
     e.preventDefault();
@@ -50,12 +50,12 @@ botaoForm.addEventListener('click', (e) => {
 })
 
 function adicionaNaTabela(){
-    tabela.innerHTML = `<td>${nome.value}</td> <td>${peso.value}</td> <td>${altura.value}</td> <td>${gordura.value}</td>`;
+    tabela.innerHTML += `<td>${novoNome.value}</td> <td>${novoPeso.value}</td> <td>${novoAltura.value}</td> <td>${novoGordura.value}</td>`;
 
-    nome.value = " ";
-    peso.value = " ";
-    altura.value = " ";
-    gordura.value = " ";
+    novoNome.value = " ";
+    novoPeso.value = " ";
+    novoAltura.value = " ";
+    novoGordura.value = " ";
 }
 
 
