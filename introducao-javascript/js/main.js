@@ -36,16 +36,26 @@ for (let index = 0; index < tabelaPaciente.length; index++) {
     }
 }
 
+const botaoForm = document.getElementById('adicionar-paciente');
+const tabela = document.getElementById('tabela-pacientes')
 
+const nome = document.querySelector('#nome');
+const peso = document.querySelector('#peso');
+const altura = document.querySelector('#altura');
+const gordura = document.querySelector('#gordura');
 
+botaoForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    adicionaNaTabela();
+})
 
-/*
-//>>>>>> Uma meneira alternativa de fazer o exercicio. só tem que tomar cuidado com o operador '&&' pois
-// quando se usa ele tem que dar true nas duas validações. no meu caso, pesso e a altura, mas queremos evitar em qualquer
-// um dos "parametros"
-if ((pesoDoPaciente <= 0 || pesoDoPaciente >= 600) || (alturaDoPaciente <= 0 || alturaDoPaciente >= 3.00)) {
-    calculoImc.textContent = 'Peso ou Altura Invalido!';
-} else {
-    calculoImc.textContent = imc;
+function adicionaNaTabela(){
+    tabela.innerHTML = `<td>${nome.value}</td> <td>${peso.value}</td> <td>${altura.value}</td> <td>${gordura.value}</td>`;
+
+    nome.value = " ";
+    peso.value = " ";
+    altura.value = " ";
+    gordura.value = " ";
 }
-*/
+
+
