@@ -1,6 +1,7 @@
 var titulo = document.querySelector('.titulo');
 titulo.textContent = 'Aparecida Nutricionista';
 
+const tabela = document.getElementById('tabela-pacientes');
 var tabelaPaciente = document.querySelectorAll('.paciente');
 
 for (let index = 0; index < tabelaPaciente.length; index++) {
@@ -37,17 +38,12 @@ for (let index = 0; index < tabelaPaciente.length; index++) {
 }
 
 const botaoForm = document.getElementById('adicionar-paciente');
-const tabela = document.getElementById('tabela-pacientes')
+const novoPaciente = document.getElementById('form-adiciona');
 
-const novoNome = document.querySelector('#nome');
-const novoPeso = document.querySelector('#peso');
-const novoAltura = document.querySelector('#altura');
-const novoGordura = document.querySelector('#gordura');
-
-botaoForm.addEventListener('click', (e) => {
-    e.preventDefault();
-    adicionaNaTabela();
-})
+const novoNome = novoPaciente.nome;
+const novoPeso = novoPaciente.peso;
+const novoAltura = novoPaciente.altura;
+const novoGordura = novoPaciente.gordura;
 
 function adicionaNaTabela(){
     imc = parseFloat(novoPeso.value) / (parseFloat(novoAltura.value) * parseFloat(novoAltura.value));
@@ -67,4 +63,8 @@ function adicionaNaTabela(){
     novoGordura.value = " ";
 }
 
+botaoForm.addEventListener('click', (e) => {
+    e.preventDefault();
+    adicionaNaTabela();
+})
 
