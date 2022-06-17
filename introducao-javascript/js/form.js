@@ -20,7 +20,8 @@ function criaFormularioDoPaciente(form) {
 
 function adicionaNaTabela(){
     var paciente = criaFormularioDoPaciente(novoPaciente);
-    imc = calculaImcDoPaciente(paciente.altura, pacipaciente.peso);
+
+    imc = calculaImcDoPaciente(paciente.altura, paciente.peso);
     tabela.innerHTML += `
         <tr>
             <td>${paciente.nome}</td> 
