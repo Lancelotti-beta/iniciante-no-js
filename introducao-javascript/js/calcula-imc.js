@@ -6,8 +6,6 @@ for (let index = 0; index < tabelaPaciente.length; index++) {
     var alturaDoPaciente = tabelaPaciente[index].querySelector('.info-altura').textContent;
     var calculoImc = tabelaPaciente[index].querySelector('.info-imc');
     
-    var imc = pesoDoPaciente / (alturaDoPaciente * alturaDoPaciente);
-    
     var peso = true;
     var altura = true;
     
@@ -28,8 +26,14 @@ for (let index = 0; index < tabelaPaciente.length; index++) {
         paciente.classList.add('paciente-invalido');
 
     } else if (peso && altura) {
-        calculoImc.textContent = imc.toFixed(2);
+        calculoImc.textContent = calculaImcDoPaciente(alturaDoPaciente, pesoDoPaciente)
         
     }
+}
+
+function calculaImcDoPaciente(altura, peso) {
+    var imc = 0;
+    imc = peso / (altura * altura);
+    return imc.toFixed(2);
 }
 

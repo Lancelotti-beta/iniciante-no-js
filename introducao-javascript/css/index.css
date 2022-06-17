@@ -82,12 +82,15 @@ label{
 	width: 100%;
 	border: 1px solid #ccc;
 	padding: .7em;
-	width: 100%;
 }
 
 .campo-medio{
 	display: inline-block;
 	padding-right: .5em;
+}
+
+.grupo:nth-child(1) {
+	width: 100%;
 }
 
 .grupo{
