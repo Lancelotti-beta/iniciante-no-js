@@ -5,6 +5,7 @@ const novoPaciente = document.getElementById('form-adiciona');
 botaoForm.addEventListener('click', (e) => {
     e.preventDefault();
     adicionaNaTabela();
+    novoPaciente.reset();
 })
 
 function criaFormularioDoPaciente(form) {
@@ -12,7 +13,8 @@ function criaFormularioDoPaciente(form) {
         nome: form.nome.value,
         peso: form.peso.value,
         altura: form.altura.value,
-        gordura: form.gordura.value
+        gordura: form.gordura.value,
+        imc: calculaImcDoPaciente(form.altura.value, form.peso.value)
     }
 
     return paciente;
@@ -21,21 +23,15 @@ function criaFormularioDoPaciente(form) {
 function adicionaNaTabela(){
     var paciente = criaFormularioDoPaciente(novoPaciente);
 
-    imc = calculaImcDoPaciente(paciente.altura, paciente.peso);
     tabela.innerHTML += `
-        <tr>
-            <td>${paciente.nome}</td> 
-            <td>${paciente.peso}</td>
-            <td>${paciente.altura}</td> 
-            <td>${paciente.gordura}</td> 
-            <td>${imc}</td>
+        <tr class="paciente">
+            <td class="info-nome">${paciente.nome}</td> 
+            <td class="info-peso">${paciente.peso}</td>
+            <td class="info-altura">${paciente.altura}</td> 
+            <td class="info-gordura">${paciente.gordura}</td> 
+            <td class="info-imc">${paciente.imc}</td>
         </tr>
     `;
-
-    paciente.nome = " ";
-    paciente.peso = " ";
-    paciente.altura = " ";
-    paciente.gordura = " ";
 }
 
 
