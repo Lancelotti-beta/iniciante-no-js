@@ -141,3 +141,9 @@ button[disabled=disabled], button:disabled {
 	background: lightcoral;
 	border: 3px solid red;
 }
+
+.mensagem-erro {
+	color: red;
+	font-size: .9rem;
+	font-weight: 700;
+}
