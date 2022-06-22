@@ -24,7 +24,7 @@ function criaFormularioDoPaciente(form) {
 function adicionaNaTabela() {
     var paciente = criaFormularioDoPaciente(novoPaciente);
 
-    if (validaAltura(paciente.altura) && validaPeso(paciente.peso)) {
+    if (validaAltura(paciente.altura) && validaPeso(paciente.peso) && validaNome(paciente.nome) && validaGordura(paciente.gordura)) {
         colocaTabelaDoUserNaPagina(paciente);
         mensagemErro.innerHTML = "";
     } else {
