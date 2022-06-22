@@ -58,18 +58,6 @@ function mostraErroDeFormDoUser(paciente) {
 
 function erroDeValor(paciente) {
     var arrayErro = [];
-    if (paciente.nome.length == 0) {
-        arrayErro.push(` Nome Inválida! O valor Nome não pode ser vazio`);
-    }
-    
-    if (!validaPeso(paciente.peso)) {
-        arrayErro.push(` Peso Inválida!`);
-    }
-
-    if (!validaAltura(paciente.altura)) {
-        arrayErro.push(` Altura Inválida!`);
-    }
-
     if (paciente.peso.length == 0) {
         arrayErro.push(` Valor Inválida! O valor de Peso não pode estar vazio`);
     }
@@ -77,11 +65,22 @@ function erroDeValor(paciente) {
     if (paciente.altura.length == 0) {
         arrayErro.push(` Valor Inválida! O valor de Altura não pode estar vazio`);
     }
+
+    if (!validaNome(paciente.nome)) {
+        arrayErro.push(` Nome Inválida! O valor Nome não pode ser vazio`);
+    }
     
-    if (paciente.gordura.length == 0) {
+    if (!validaPeso(paciente.peso)) {
+        arrayErro.push(` Peso Inválida!`);
+    }
+    
+    if (!validaAltura(paciente.altura)) {
+        arrayErro.push(` Altura Inválida!`);
+    }
+    
+    if (!validaGordura(paciente.gordura)) {
         arrayErro.push(` Valor Inválida! O valor Percentual de Gordura não pode estar vazio`);
     }
-
     return arrayErro;
 }
 
