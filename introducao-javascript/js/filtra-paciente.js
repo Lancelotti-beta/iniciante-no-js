@@ -1,16 +1,30 @@
 var inputBuscaDePaciente = document.querySelector('#filtre-paciente');
 
 inputBuscaDePaciente.addEventListener('input', function() {
-    buscaPaciente();
+
+    buscaPaciente(this.value);
 })
 
-function buscaPaciente() {
+function buscaPaciente(input) {
     var pacientes = document.querySelectorAll('.paciente');
-    var list = [];
-    pacientes.forEach(function(paciente){
-        list.push(paciente.querySelector('.info-nome').textContent);
-    });
-    
-    return console.log(list);
+
+    if(input.length > 0) {
+        
+        pacientes.forEach(function(paciente){
+            var nomeDaTabela = paciente.querySelector('.info-nome');
+            var nome = nomeDaTabela.textContent;
+
+            if(!RegExp(input, 'i').test(nome)){
+                paciente.classList.add('invisivel');
+            } else {
+                paciente.classList.remove('invisivel');
+            }
+        });
+    } else {
+
+        pacientes.forEach(function(paciente){
+            paciente.classList.remove('invisivel');
+        });
+    }
 }
 
