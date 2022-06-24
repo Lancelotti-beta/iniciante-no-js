@@ -1,7 +1,16 @@
 var inputBuscaDePaciente = document.querySelector('#filtre-paciente');
 
 inputBuscaDePaciente.addEventListener('input', function() {
-    
-    console.log(this.value);
+    buscaPaciente();
 })
+
+function buscaPaciente() {
+    var pacientes = document.querySelectorAll('.paciente');
+    var list = [];
+    pacientes.forEach(function(paciente){
+        list.push(paciente.querySelector('.info-nome').textContent);
+    });
+    
+    return console.log(list);
+}
 
