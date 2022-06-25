@@ -183,6 +183,15 @@ button[disabled=disabled], button:disabled {
 	display: none;
 }
 
+.erro {
+	color: #d60c0c;
+	font-size: 1.3rem;
+}
+
+.bto-principal--alternativo {
+	width: 100%;
+}
+
 @media screen and (min-width: 768px){
 	.container-busca {
 		display: flex;
